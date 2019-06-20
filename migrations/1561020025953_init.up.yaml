@@ -1,0 +1,1094 @@
+- args:
+    allowlist: []
+    functions: []
+    query_collections: []
+    query_templates: []
+    remote_schemas: []
+    tables:
+    - array_relationships: []
+      delete_permissions:
+      - comment: null
+        permission:
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          filter: {}
+        role: manager
+      event_triggers: []
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: owner
+        using:
+          foreign_key_constraint_on: ownerId
+      - comment: null
+        name: consumer
+        using:
+          foreign_key_constraint_on: consumerId
+      - comment: null
+        name: merchant
+        using:
+          foreign_key_constraint_on: merchantId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - consumerId
+          - createdAt
+          - data
+          - date
+          - id
+          - merchantId
+          - note
+          - notify
+          - ownerId
+          - time
+          - type
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - consumerId
+          - createdAt
+          - data
+          - date
+          - id
+          - merchantId
+          - note
+          - notify
+          - ownerId
+          - time
+          - type
+          filter: {}
+        role: manager
+      table: Activity
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - consumerId
+          - createdAt
+          - data
+          - date
+          - id
+          - merchantId
+          - note
+          - notify
+          - ownerId
+          - time
+          - type
+          filter: {}
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - consumerId
+          - createdAt
+          - data
+          - date
+          - id
+          - merchantId
+          - note
+          - notify
+          - ownerId
+          - time
+          - type
+          filter: {}
+          set: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions: []
+      table: test_oudam_oudam
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: credential
+        using:
+          foreign_key_constraint_on: credentialId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - createdAt
+          - token
+          - credentialId
+          filter:
+            token:
+              _eq: X-Hasura-User-token
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - createdAt
+          - credentialId
+          - id
+          - token
+          filter:
+            token:
+              _eq: X-Hasura-User-token
+        role: manager
+      table: Session
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - identityDocumentType
+          - tamperingDigital
+          - tamperingPhysical
+          - gender
+          - lastName
+          - firstName
+          - dateOfBirth
+          - documentExpiredDate
+          - documentNumber
+          - city
+          - nationality
+          - createdAt
+          - amazonS3IdDocument
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - city
+          - id
+          - identityDocumentType
+          - tamperingDigital
+          - tamperingPhysical
+          - gender
+          - lastName
+          - firstName
+          - dateOfBirth
+          - documentExpiredDate
+          - documentNumber
+          - nationality
+          - createdAt
+          - amazonS3IdDocument
+          filter: {}
+        role: manager
+      table: ocr
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Id
+          - Name
+          - Description
+          - CreatedById
+          - Created
+          - Updated
+          - UpdatedById
+          - Inactive
+          - Version
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - UpdatedById
+          - CreatedById
+          - Created
+          - Updated
+          - Inactive
+          - Version
+          - Id
+          - Name
+          - Description
+          filter: {}
+        role: manager
+      table: Sector
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Id
+          - Name
+          - Description
+          - CreatedById
+          - Created
+          - Updated
+          - UpdatedById
+          - Inactive
+          - Version
+          - CommuneId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - CommuneId
+          - Version
+          - Inactive
+          - UpdatedById
+          - Updated
+          - Created
+          - CreatedById
+          - Description
+          - Name
+          - Id
+          filter: {}
+        role: manager
+      table: Village
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: contactDetails
+        using:
+          foreign_key_constraint_on:
+            column: merchantId
+            table: ContactDetail
+      - comment: null
+        name: documents
+        using:
+          foreign_key_constraint_on:
+            column: merchantId
+            table: Document
+      - comment: null
+        name: activities
+        using:
+          foreign_key_constraint_on:
+            column: merchantId
+            table: Activity
+      delete_permissions: []
+      event_triggers:
+      - definition:
+          delete:
+            columns: '*'
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - addressName
+            - coverUrl
+            - createdAt
+            - description
+            - facebookUrl
+            - flag
+            - hideAddress
+            - id
+            - latitude
+            - logoUrl
+            - longtitude
+            - name
+            - openingHours
+            - referenceId
+            - sector
+            - size
+            - source
+            - status
+            - type
+            - websiteUrl
+        headers: []
+        name: merchantActi
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+          timeout_sec: 60
+        webhook: https://node.clik-test.com/ekmc/activities
+      insert_permissions:
+      - comment: null
+        permission:
+          check: {}
+          columns: []
+          set: {}
+        role: associate
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - name
+          - description
+          - openingHours
+          - facebookUrl
+          - websiteUrl
+          - addressName
+          - latitude
+          - longtitude
+          - hideAddress
+          - createdAt
+          - status
+          - logoUrl
+          - coverUrl
+          - sector
+          - type
+          - size
+          - source
+          - referenceId
+          - flag
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - facebookUrl
+          - websiteUrl
+          - addressName
+          - coverUrl
+          - latitude
+          - longtitude
+          - flag
+          - size
+          - id
+          - sector
+          - referenceId
+          - source
+          - hideAddress
+          - createdAt
+          - status
+          - logoUrl
+          - type
+          - name
+          - description
+          - openingHours
+          filter: {}
+        role: associate
+      table: Merchant
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: credential
+        using:
+          foreign_key_constraint_on:
+            column: userId
+            table: Credential
+      delete_permissions:
+      - comment: null
+        permission:
+          filter:
+            token:
+              _eq: X-HASURA-USER-TOKEN
+        role: manager
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - email
+          - id
+          - name
+          - photo
+          - role
+          - token
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - email
+          - id
+          - name
+          - photo
+          - role
+          - token
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - email
+          - id
+          - name
+          - photo
+          - role
+          filter: {}
+        role: user
+      table: Users
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - email
+          - name
+          - photo
+          filter:
+            token:
+              _eq: X-HASURA-USER-TOKEN
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - email
+          - name
+          - photo
+          filter:
+            token:
+              _eq: X-HASURA-USER-TOKEN
+          set: {}
+        role: manager
+    - array_relationships:
+      - comment: null
+        name: Districts
+        using:
+          foreign_key_constraint_on:
+            column: ProvinceId
+            table: District
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Id
+          - Name
+          - Description
+          - CreatedById
+          - Created
+          - Updated
+          - UpdatedById
+          - Inactive
+          - Version
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Created
+          - Id
+          - Name
+          - Description
+          - CreatedById
+          - UpdatedById
+          - Updated
+          - Version
+          - Inactive
+          filter: {}
+        role: manager
+      table: Province
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: documents
+        using:
+          foreign_key_constraint_on:
+            column: name
+            table: Document
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - name
+          - url
+          - creatdedAt
+          filter: {}
+        role: manager
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - name
+          - url
+          - creatdedAt
+          filter: {}
+        role: associate
+      table: DocumentType
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: Communes
+        using:
+          manual_configuration:
+            column_mapping:
+              Id: DistrictId
+            remote_table: Commune
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: Province
+        using:
+          foreign_key_constraint_on: ProvinceId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Id
+          - Name
+          - Description
+          - CreatedById
+          - Created
+          - Updated
+          - UpdatedById
+          - Inactive
+          - Version
+          - ProvinceId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Id
+          - Name
+          - Description
+          - CreatedById
+          - Created
+          - Updated
+          - UpdatedById
+          - Inactive
+          - Version
+          - ProvinceId
+          filter: {}
+        role: manager
+      table: District
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - name
+          - documents
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - name
+          - documents
+          filter: {}
+        role: manager
+      table: Business
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions: []
+      table: test_oudam
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: sessions
+        using:
+          foreign_key_constraint_on:
+            column: credentialId
+            table: Session
+      delete_permissions: []
+      event_triggers:
+      - definition:
+          enable_manual: true
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - userId
+            - pin
+            - phoneNumber
+            - id
+        headers:
+        - name: provider
+          value: clik-admin
+        name: EncryptPin
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+          timeout_sec: 60
+        webhook: https://node.clik-test.com/ekmc/encryptPin
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: user
+        using:
+          foreign_key_constraint_on: userId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - phoneNumber
+          - userId
+          filter:
+            sessions:
+              token:
+                _eq: X-Hasura-User-token
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - phoneNumber
+          - userId
+          filter:
+            sessions:
+              token:
+                _eq: X-Hasura-User-token
+        role: manager
+      table: Credential
+      update_permissions:
+      - comment: null
+        permission:
+          columns:
+          - id
+          - phoneNumber
+          - pin
+          - userId
+          filter:
+            sessions:
+              token:
+                _eq: X-Hasura-User-token
+          set: {}
+        role: associate
+      - comment: null
+        permission:
+          columns:
+          - id
+          - phoneNumber
+          - pin
+          - userId
+          filter:
+            sessions:
+              token:
+                _eq: X-Hasura-User-token
+          set: {}
+        role: manager
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: merchant
+        using:
+          foreign_key_constraint_on: merchantId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - phoneNumber
+          - description
+          - merchantId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - phoneNumber
+          - description
+          - merchantId
+          filter: {}
+        role: manager
+      table: ContactDetail
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: Villages
+        using:
+          manual_configuration:
+            column_mapping:
+              Id: CommuneId
+            remote_table: Village
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Id
+          - Name
+          - Description
+          - CreatedById
+          - Created
+          - Updated
+          - UpdatedById
+          - Inactive
+          - Version
+          - DistrictId
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Id
+          - Name
+          - Description
+          - CreatedById
+          - Created
+          - Updated
+          - UpdatedById
+          - Inactive
+          - Version
+          - DistrictId
+          filter: {}
+        role: manager
+      table: Commune
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions: []
+      table: test_oudam_test
+      update_permissions: []
+    - array_relationships:
+      - comment: null
+        name: activities
+        using:
+          foreign_key_constraint_on:
+            column: consumerId
+            table: Activity
+      delete_permissions: []
+      event_triggers:
+      - definition:
+          delete:
+            columns: '*'
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - Address
+            - AmazonS3FaceImage
+            - AmazonS3FaceVideo
+            - AmazonS3IdDocument
+            - Citizenship
+            - City
+            - Commune
+            - CountryCode
+            - CreatedDate
+            - DateOfBirth
+            - District
+            - DocumentExpiredDate
+            - DocumentIssueDate
+            - DocumentNumber
+            - Email
+            - FaceMatchPercentage
+            - FirstName
+            - FullName
+            - Gender
+            - HouseNumber
+            - Id
+            - IdentityDocumentType
+            - IdTypeMatch
+            - IsEkycDataAccurate
+            - IsFaceMatch
+            - IsLiveVDO
+            - IsScanPhoto
+            - LastName
+            - Latitude
+            - Liveness
+            - LivenessResult
+            - Login
+            - Longitude
+            - Nationality
+            - Note
+            - PlaceOfBirth
+            - PostalCode
+            - ReferenceId
+            - ScanDocument
+            - SelectedCountry
+            - SelectedIdType
+            - SlashAudit
+            - Source
+            - Status
+            - Street
+            - TamperingDigital
+            - TamperingPhysical
+            - UpdatedDate
+            - VerifyFaceResult
+        headers: []
+        name: consumerActi
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+          timeout_sec: 60
+        webhook: https://node.clik-test.com/ekmc/activities
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: ocr
+        using:
+          manual_configuration:
+            column_mapping:
+              AmazonS3IdDocument: amazonS3IdDocument
+            remote_table: ocr
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - Id
+          - ReferenceId
+          - Status
+          - Login
+          - FirstName
+          - LastName
+          - FullName
+          - Gender
+          - DateOfBirth
+          - Nationality
+          - ScanDocument
+          - VerifyFaceResult
+          - LivenessResult
+          - AmazonS3IdDocument
+          - DocumentNumber
+          - DocumentExpiredDate
+          - Citizenship
+          - IdentityDocumentType
+          - Address
+          - IsScanPhoto
+          - Liveness
+          - IdTypeMatch
+          - FaceMatchPercentage
+          - IsFaceMatch
+          - AmazonS3FaceImage
+          - IsLiveVDO
+          - CreatedDate
+          - UpdatedDate
+          - Source
+          - Email
+          - SelectedIdType
+          - SelectedCountry
+          - IsEkycDataAccurate
+          - SlashAudit
+          - Note
+          - TamperingPhysical
+          - TamperingDigital
+          - Commune
+          - District
+          - City
+          - AmazonS3FaceVideo
+          - Latitude
+          - Longitude
+          - HouseNumber
+          - Street
+          - PostalCode
+          - PlaceOfBirth
+          - CountryCode
+          - DocumentIssueDate
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - DocumentIssueDate
+          - SelectedIdType
+          - SelectedCountry
+          - IsEkycDataAccurate
+          - SlashAudit
+          - Note
+          - TamperingPhysical
+          - TamperingDigital
+          - Commune
+          - District
+          - City
+          - AmazonS3FaceVideo
+          - Latitude
+          - Longitude
+          - HouseNumber
+          - Street
+          - PostalCode
+          - PlaceOfBirth
+          - CountryCode
+          - Id
+          - ReferenceId
+          - Status
+          - Login
+          - FirstName
+          - LastName
+          - FullName
+          - Gender
+          - DateOfBirth
+          - Nationality
+          - ScanDocument
+          - VerifyFaceResult
+          - LivenessResult
+          - AmazonS3IdDocument
+          - DocumentNumber
+          - DocumentExpiredDate
+          - Citizenship
+          - IdentityDocumentType
+          - Address
+          - IsScanPhoto
+          - Liveness
+          - IdTypeMatch
+          - FaceMatchPercentage
+          - IsFaceMatch
+          - AmazonS3FaceImage
+          - IsLiveVDO
+          - CreatedDate
+          - UpdatedDate
+          - Source
+          - Email
+          filter: {}
+        role: manager
+      table: t_account
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - role
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: false
+          columns:
+          - id
+          - role
+          filter: {}
+        role: manager
+      table: Roles
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers: []
+      insert_permissions: []
+      object_relationships: []
+      select_permissions: []
+      table: test_dara
+      update_permissions: []
+    - array_relationships: []
+      delete_permissions: []
+      event_triggers:
+      - definition:
+          delete:
+            columns: '*'
+          insert:
+            columns: '*'
+          update:
+            columns:
+            - createdAt
+            - id
+            - isChecked
+            - isValid
+            - merchantId
+            - name
+            - updatedAt
+            - url
+        headers: []
+        name: documentActivity
+        retry_conf:
+          interval_sec: 10
+          num_retries: 0
+          timeout_sec: 60
+        webhook: https://node.clik-test.com/ekmc/activities
+      insert_permissions: []
+      object_relationships:
+      - comment: null
+        name: merchant
+        using:
+          foreign_key_constraint_on: merchantId
+      select_permissions:
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - isChecked
+          - isValid
+          - name
+          - createdAt
+          - updatedAt
+          - merchantId
+          - url
+          filter: {}
+        role: associate
+      - comment: null
+        permission:
+          allow_aggregations: true
+          columns:
+          - id
+          - url
+          - merchantId
+          - updatedAt
+          - createdAt
+          - name
+          - isValid
+          - isChecked
+          filter: {}
+        role: manager
+      table: Document
+      update_permissions: []
+  type: replace_metadata
