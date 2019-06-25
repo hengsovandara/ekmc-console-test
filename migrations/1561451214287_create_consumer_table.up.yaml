@@ -1,0 +1,411 @@
+- args:
+    cascade: false
+    sql: create table "Consumer" as table "t_account";
+  type: run_sql
+- args:
+    name: Consumer
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    sql: ALTER TABLE ONLY "public"."Consumer" ALTER COLUMN "Id" SET DEFAULT gen_random_uuid();
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Id" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Id" to "id";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."ReferenceId" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "ReferenceId" to "referenceId";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Status" TYPE int4;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Status" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Status" to "status";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Login" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Login" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Login" to "login";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "FirstName" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."FirstName" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "FirstName" to "firstName";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "LastName" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."LastName" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "LastName" to "lastName";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "FullName" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."FullName" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "FullName" to "fullName";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Gender" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Gender" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Gender" to "gender";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "DateOfBirth" TYPE date;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."DateOfBirth" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "DateOfBirth" to "dateOfBirth";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Nationality" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Nationality" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Nationality" to "nationality";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."ScanDocument" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "ScanDocument" to "scanDocument";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."VerifyFaceResult" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "VerifyFaceResult" to "verifyFaceResult";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."LivenessResult" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "LivenessResult" to "livenessResult";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "AmazonS3IdDocument" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."AmazonS3IdDocument" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "AmazonS3IdDocument" to "amazonS3IdDocument";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "DocumentNumber" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."DocumentNumber" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "DocumentNumber" to "documentNumber";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "DocumentExpiredDate" TYPE timestamp;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."DocumentExpiredDate" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "DocumentExpiredDate" to "documentExpiredDate";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Citizenship" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Citizenship" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Citizenship" to "citizenship";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "IdentityDocumentType" TYPE
+      text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."IdentityDocumentType" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "IdentityDocumentType" to "identityDocumentType";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Address" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Address" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Address" to "address";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "IsScanPhoto" TYPE bool;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."IsScanPhoto" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "IsScanPhoto" to "isScanPhoto";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Liveness" TYPE int4;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Liveness" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Liveness" to "liveness";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "IdTypeMatch" TYPE bool;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."IdTypeMatch" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "IdTypeMatch" to "idTypeMatch";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "FaceMatchPercentage" TYPE int2;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."FaceMatchPercentage" IS ''
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "FaceMatchPercentage" TYPE int2;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."FaceMatchPercentage" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "FaceMatchPercentage" to "faceMatchPercentage";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "IsFaceMatch" TYPE bool;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."IsFaceMatch" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "IsFaceMatch" to "isFaceMatch";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."AmazonS3FaceImage" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "AmazonS3FaceImage" to "amazonS3FaceImage";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "IsLiveVDO" TYPE bool;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."IsLiveVDO" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "IsLiveVDO" to "isLiveVDO";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "CreatedDate" TYPE timestamp;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."CreatedDate" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "CreatedDate" to "createdAt";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "UpdatedDate" TYPE timestamp;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."UpdatedDate" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "UpdatedDate" to "updatedAt";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Source" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Source" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Source" to "source";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Email" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Email" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Email" to "email";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "SelectedIdType" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."SelectedIdType" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "SelectedIdType" to "selectedIdType";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "SelectedCountry" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."SelectedCountry" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "SelectedCountry" to "selectedCountry";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "IsEkycDataAccurate" TYPE bool;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."IsEkycDataAccurate" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "IsEkycDataAccurate" to "isEkycDataAccurate";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."SlashAudit" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "SlashAudit" to "slashAudit";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Note" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Note" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Note" to "note";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "TamperingPhysical" TYPE int2;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."TamperingPhysical" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "TamperingPhysical" to "tamperingPhysical";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "TamperingDigital" TYPE int2;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."TamperingDigital" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "TamperingDigital" to "tamperingDigital";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "Commune" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Commune" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Commune" to "commune";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "District" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."District" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "District" to "district";
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "City" TYPE text;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."City" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "City" to "city";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."AmazonS3FaceVideo" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "AmazonS3FaceVideo" to "amazonS3FaceVideo";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Latitude" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Latitude" to "latitude";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Longitude" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Longitude" to "longitude";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."HouseNumber" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "HouseNumber" to "houseNumber";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."Street" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "Street" to "street";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."PostalCode" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "PostalCode" to "postalCode";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."PlaceOfBirth" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "PlaceOfBirth" to "placeOfBirth";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."CountryCode" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "CountryCode" to "countryCode";
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."DocumentIssueDate" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Consumer" rename column "DocumentIssueDate" to "documentIssueDate";
+  type: run_sql
