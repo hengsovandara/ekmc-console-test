@@ -1,0 +1,6 @@
+- args:
+    relationship: activities
+    table:
+      name: t_account
+      schema: public
+  type: drop_relationship

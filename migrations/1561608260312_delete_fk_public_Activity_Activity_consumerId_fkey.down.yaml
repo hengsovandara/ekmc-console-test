@@ -1,0 +1,4 @@
+- args:
+    sql: alter table "public"."Activity" add foreign key ("consumerId") references
+      "public"."t_account"("Id") on update set null on delete set null;
+  type: run_sql

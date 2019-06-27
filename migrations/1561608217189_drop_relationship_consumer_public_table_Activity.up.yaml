@@ -1,0 +1,6 @@
+- args:
+    relationship: consumer
+    table:
+      name: Activity
+      schema: public
+  type: drop_relationship

@@ -1,0 +1,5 @@
+- args:
+    sql: |-
+      alter table "public"."Consumer"
+          add constraint "Consumer_pkey" primary key ( "id" );
+  type: run_sql

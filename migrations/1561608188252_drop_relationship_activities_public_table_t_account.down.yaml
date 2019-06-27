@@ -1,0 +1,12 @@
+- args:
+    name: activities
+    table:
+      name: t_account
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: consumerId
+        table:
+          name: Activity
+          schema: public
+  type: create_array_relationship

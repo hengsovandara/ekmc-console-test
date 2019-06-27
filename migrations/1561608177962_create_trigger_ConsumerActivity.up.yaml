@@ -1,0 +1,68 @@
+- args:
+    delete:
+      columns: '*'
+    enable_manual: true
+    headers: []
+    insert:
+      columns: '*'
+    name: ConsumerActivity
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    table:
+      name: Consumer
+      schema: public
+    update:
+      columns:
+      - isLiveVDO
+      - createdAt
+      - updatedAt
+      - source
+      - email
+      - selectedIdType
+      - selectedCountry
+      - isEkycDataAccurate
+      - slashAudit
+      - note
+      - tamperingPhysical
+      - tamperingDigital
+      - commune
+      - district
+      - city
+      - amazonS3FaceVideo
+      - latitude
+      - longitude
+      - houseNumber
+      - street
+      - postalCode
+      - placeOfBirth
+      - countryCode
+      - documentIssueDate
+      - amazonS3FaceImage
+      - referenceId
+      - status
+      - login
+      - firstName
+      - lastName
+      - fullName
+      - gender
+      - dateOfBirth
+      - nationality
+      - scanDocument
+      - verifyFaceResult
+      - livenessResult
+      - amazonS3IdDocument
+      - documentNumber
+      - documentExpiredDate
+      - citizenship
+      - identityDocumentType
+      - address
+      - isScanPhoto
+      - liveness
+      - idTypeMatch
+      - faceMatchPercentage
+      - isFaceMatch
+      - id
+    webhook: https://node.clik-test.com/ekmc/activities
+  type: create_event_trigger
