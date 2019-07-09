@@ -1,0 +1,13 @@
+- args:
+    name: assignedUser
+    table:
+      name: Merchant
+      schema: public
+    using:
+      manual_configuration:
+        column_mapping:
+          assignmentId: id
+        remote_table:
+          name: Assignment
+          schema: public
+  type: create_object_relationship

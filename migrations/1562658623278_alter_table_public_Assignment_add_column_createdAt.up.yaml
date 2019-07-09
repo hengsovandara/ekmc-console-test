@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."Assignment" ADD COLUMN "createdAt" timestamp NOT NULL
+      DEFAULT now()
+  type: run_sql

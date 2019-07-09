@@ -104,14 +104,6 @@ tables:
   delete_permissions: []
   event_triggers: []
   insert_permissions: []
-  object_relationships: []
-  select_permissions: []
-  table: test_oudam_oudam
-  update_permissions: []
-- array_relationships: []
-  delete_permissions: []
-  event_triggers: []
-  insert_permissions: []
   object_relationships:
   - comment: null
     name: credential
@@ -620,13 +612,27 @@ tables:
     role: manager
   table: Business
   update_permissions: []
-- array_relationships: []
+- array_relationships:
+  - comment: null
+    name: activities
+    using:
+      manual_configuration:
+        column_mapping:
+          id: consumerId
+        remote_table: Activity
   delete_permissions: []
   event_triggers: []
   insert_permissions: []
-  object_relationships: []
+  object_relationships:
+  - comment: null
+    name: ocr
+    using:
+      manual_configuration:
+        column_mapping:
+          amazonS3IdDocument: amazonS3IdDocument
+        remote_table: ocr
   select_permissions: []
-  table: test_oudam
+  table: Consumer
   update_permissions: []
 - array_relationships:
   - comment: null
@@ -793,14 +799,6 @@ tables:
       filter: {}
     role: manager
   table: Commune
-  update_permissions: []
-- array_relationships: []
-  delete_permissions: []
-  event_triggers: []
-  insert_permissions: []
-  object_relationships: []
-  select_permissions: []
-  table: test_oudam_test
   update_permissions: []
 - array_relationships:
   - comment: null
@@ -1019,14 +1017,6 @@ tables:
       filter: {}
     role: manager
   table: Roles
-  update_permissions: []
-- array_relationships: []
-  delete_permissions: []
-  event_triggers: []
-  insert_permissions: []
-  object_relationships: []
-  select_permissions: []
-  table: test_dara
   update_permissions: []
 - array_relationships: []
   delete_permissions: []

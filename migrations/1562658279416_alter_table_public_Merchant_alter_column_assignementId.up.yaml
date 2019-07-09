@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."Merchant"."assignementId" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."Merchant" rename column "assignementId" to "assignmentId";
+  type: run_sql

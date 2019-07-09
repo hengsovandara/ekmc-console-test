@@ -1,0 +1,6 @@
+- args:
+    relationship: assignedUser
+    table:
+      name: Merchant
+      schema: public
+  type: drop_relationship
