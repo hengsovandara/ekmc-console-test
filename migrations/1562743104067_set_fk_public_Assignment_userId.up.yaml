@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"Assignment\"\n           add constraint
+      \"Assignment_userId_fkey\" \n           foreign key (\"userId\") \n           references
+      \"public\".\"Users\"\n           (\"id\") on update set null on delete set null;\n
+      \     "
+  type: run_sql

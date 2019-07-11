@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."Assignment"."userId" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."Assignment" rename column "verificationId" to "userId";
+  type: run_sql

@@ -1,0 +1,7 @@
+- args:
+    sql: ALTER TABLE "public"."Assignment" ADD COLUMN "verificationId" uuid
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Assignment" ALTER COLUMN "verificationId" DROP NOT
+      NULL
+  type: run_sql

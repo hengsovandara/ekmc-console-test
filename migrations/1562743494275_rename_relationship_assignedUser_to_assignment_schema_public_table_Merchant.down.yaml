@@ -1,0 +1,7 @@
+- args:
+    name: assignment
+    new_name: assignedUser
+    table:
+      name: Merchant
+      schema: public
+  type: rename_relationship
