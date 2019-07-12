@@ -1,0 +1,11 @@
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "createdAt" TYPE timestamp without
+      time zone;
+  type: run_sql
+- args:
+    sql: ALTER TABLE ONLY "public"."Consumer" ALTER COLUMN "createdAt" SET DEFAULT
+      now();
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."createdAt" IS 'null'
+  type: run_sql
