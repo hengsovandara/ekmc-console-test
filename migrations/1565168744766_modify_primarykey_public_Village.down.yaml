@@ -1,0 +1,3 @@
+- args:
+    sql: alter table "public"."Village" drop constraint "Village_pkey";
+  type: run_sql
