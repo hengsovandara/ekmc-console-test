@@ -1,0 +1,8 @@
+- args:
+    sql: CREATE TABLE "enum"."statuses"("value" integer NOT NULL, "text" text, PRIMARY
+      KEY ("value") );
+  type: run_sql
+- args:
+    name: statuses
+    schema: enum
+  type: add_existing_table_or_view

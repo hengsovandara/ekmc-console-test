@@ -1,0 +1,3 @@
+- args:
+    sql: drop schema "enum" cascade;
+  type: run_sql
