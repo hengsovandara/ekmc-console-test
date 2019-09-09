@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."Consumer" ADD COLUMN "flag" text
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "flag" DROP NOT NULL
+  type: run_sql

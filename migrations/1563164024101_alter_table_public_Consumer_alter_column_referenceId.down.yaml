@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."Consumer" DROP CONSTRAINT "Consumer_referenceId_key"
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."referenceId" IS 'null'
+  type: run_sql

@@ -1,7 +1,6 @@
 allowlist: []
 functions: []
 query_collections: []
-query_templates: []
 remote_schemas: []
 tables:
 - array_relationships: []
@@ -22,13 +21,13 @@ tables:
     using:
       foreign_key_constraint_on: ownerId
   - comment: null
-    name: consumer
-    using:
-      foreign_key_constraint_on: consumerId
-  - comment: null
     name: merchant
     using:
       foreign_key_constraint_on: merchantId
+  - comment: null
+    name: consumer
+    using:
+      foreign_key_constraint_on: consumerId
   select_permissions:
   - comment: null
     permission:
@@ -188,6 +187,21 @@ tables:
   delete_permissions: []
   event_triggers: []
   insert_permissions: []
+  object_relationships:
+  - comment: null
+    name: user
+    using:
+      manual_configuration:
+        column_mapping:
+          userId: id
+        remote_table: Users
+  select_permissions: []
+  table: Assignment
+  update_permissions: []
+- array_relationships: []
+  delete_permissions: []
+  event_triggers: []
+  insert_permissions: []
   object_relationships: []
   select_permissions:
   - comment: null
@@ -324,7 +338,14 @@ tables:
       columns: []
       set: {}
     role: associate
-  object_relationships: []
+  object_relationships:
+  - comment: null
+    name: assignment
+    using:
+      manual_configuration:
+        column_mapping:
+          assignmentId: id
+        remote_table: Assignment
   select_permissions:
   - comment: null
     permission:
@@ -621,7 +642,71 @@ tables:
           id: consumerId
         remote_table: Activity
   delete_permissions: []
-  event_triggers: []
+  event_triggers:
+  - definition:
+      delete:
+        columns: '*'
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns:
+        - isLiveVDO
+        - createdAt
+        - updatedAt
+        - source
+        - email
+        - selectedIdType
+        - selectedCountry
+        - isEkycDataAccurate
+        - slashAudit
+        - note
+        - tamperingPhysical
+        - tamperingDigital
+        - commune
+        - district
+        - city
+        - amazonS3FaceVideo
+        - latitude
+        - longitude
+        - houseNumber
+        - street
+        - postalCode
+        - placeOfBirth
+        - countryCode
+        - documentIssueDate
+        - amazonS3FaceImage
+        - referenceId
+        - status
+        - login
+        - firstName
+        - lastName
+        - fullName
+        - gender
+        - dateOfBirth
+        - nationality
+        - scanDocument
+        - verifyFaceResult
+        - livenessResult
+        - amazonS3IdDocument
+        - documentNumber
+        - documentExpiredDate
+        - citizenship
+        - identityDocumentType
+        - address
+        - isScanPhoto
+        - liveness
+        - idTypeMatch
+        - faceMatchPercentage
+        - isFaceMatch
+        - id
+    headers: []
+    name: ConsumerActivity
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: https://node.clik-test.com/ekmc/activities
   insert_permissions: []
   object_relationships:
   - comment: null
@@ -631,6 +716,13 @@ tables:
         column_mapping:
           amazonS3IdDocument: amazonS3IdDocument
         remote_table: ocr
+  - comment: null
+    name: assignment
+    using:
+      manual_configuration:
+        column_mapping:
+          assignmentId: id
+        remote_table: Assignment
   select_permissions: []
   table: Consumer
   update_permissions: []
@@ -799,200 +891,6 @@ tables:
       filter: {}
     role: manager
   table: Commune
-  update_permissions: []
-- array_relationships:
-  - comment: null
-    name: activities
-    using:
-      foreign_key_constraint_on:
-        column: consumerId
-        table: Activity
-  delete_permissions: []
-  event_triggers:
-  - definition:
-      delete:
-        columns: '*'
-      insert:
-        columns: '*'
-      update:
-        columns:
-        - Address
-        - AmazonS3FaceImage
-        - AmazonS3FaceVideo
-        - AmazonS3IdDocument
-        - Citizenship
-        - City
-        - Commune
-        - CountryCode
-        - CreatedDate
-        - DateOfBirth
-        - District
-        - DocumentExpiredDate
-        - DocumentIssueDate
-        - DocumentNumber
-        - Email
-        - FaceMatchPercentage
-        - FirstName
-        - FullName
-        - Gender
-        - HouseNumber
-        - Id
-        - IdentityDocumentType
-        - IdTypeMatch
-        - IsEkycDataAccurate
-        - IsFaceMatch
-        - IsLiveVDO
-        - IsScanPhoto
-        - LastName
-        - Latitude
-        - Liveness
-        - LivenessResult
-        - Login
-        - Longitude
-        - Nationality
-        - Note
-        - PlaceOfBirth
-        - PostalCode
-        - ReferenceId
-        - ScanDocument
-        - SelectedCountry
-        - SelectedIdType
-        - SlashAudit
-        - Source
-        - Status
-        - Street
-        - TamperingDigital
-        - TamperingPhysical
-        - UpdatedDate
-        - VerifyFaceResult
-    headers: []
-    name: consumerActi
-    retry_conf:
-      interval_sec: 10
-      num_retries: 0
-      timeout_sec: 60
-    webhook: https://node.clik-test.com/ekmc/activities
-  insert_permissions: []
-  object_relationships:
-  - comment: null
-    name: ocr
-    using:
-      manual_configuration:
-        column_mapping:
-          AmazonS3IdDocument: amazonS3IdDocument
-        remote_table: ocr
-  select_permissions:
-  - comment: null
-    permission:
-      allow_aggregations: true
-      columns:
-      - Id
-      - ReferenceId
-      - Status
-      - Login
-      - FirstName
-      - LastName
-      - FullName
-      - Gender
-      - DateOfBirth
-      - Nationality
-      - ScanDocument
-      - VerifyFaceResult
-      - LivenessResult
-      - AmazonS3IdDocument
-      - DocumentNumber
-      - DocumentExpiredDate
-      - Citizenship
-      - IdentityDocumentType
-      - Address
-      - IsScanPhoto
-      - Liveness
-      - IdTypeMatch
-      - FaceMatchPercentage
-      - IsFaceMatch
-      - AmazonS3FaceImage
-      - IsLiveVDO
-      - CreatedDate
-      - UpdatedDate
-      - Source
-      - Email
-      - SelectedIdType
-      - SelectedCountry
-      - IsEkycDataAccurate
-      - SlashAudit
-      - Note
-      - TamperingPhysical
-      - TamperingDigital
-      - Commune
-      - District
-      - City
-      - AmazonS3FaceVideo
-      - Latitude
-      - Longitude
-      - HouseNumber
-      - Street
-      - PostalCode
-      - PlaceOfBirth
-      - CountryCode
-      - DocumentIssueDate
-      filter: {}
-    role: associate
-  - comment: null
-    permission:
-      allow_aggregations: true
-      columns:
-      - DocumentIssueDate
-      - SelectedIdType
-      - SelectedCountry
-      - IsEkycDataAccurate
-      - SlashAudit
-      - Note
-      - TamperingPhysical
-      - TamperingDigital
-      - Commune
-      - District
-      - City
-      - AmazonS3FaceVideo
-      - Latitude
-      - Longitude
-      - HouseNumber
-      - Street
-      - PostalCode
-      - PlaceOfBirth
-      - CountryCode
-      - Id
-      - ReferenceId
-      - Status
-      - Login
-      - FirstName
-      - LastName
-      - FullName
-      - Gender
-      - DateOfBirth
-      - Nationality
-      - ScanDocument
-      - VerifyFaceResult
-      - LivenessResult
-      - AmazonS3IdDocument
-      - DocumentNumber
-      - DocumentExpiredDate
-      - Citizenship
-      - IdentityDocumentType
-      - Address
-      - IsScanPhoto
-      - Liveness
-      - IdTypeMatch
-      - FaceMatchPercentage
-      - IsFaceMatch
-      - AmazonS3FaceImage
-      - IsLiveVDO
-      - CreatedDate
-      - UpdatedDate
-      - Source
-      - Email
-      filter: {}
-    role: manager
-  table: t_account
   update_permissions: []
 - array_relationships: []
   delete_permissions: []

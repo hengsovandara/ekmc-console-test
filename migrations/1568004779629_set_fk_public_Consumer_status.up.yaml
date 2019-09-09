@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"Consumer\"\n           add constraint
+      \"Consumer_status_fkey\" \n           foreign key (\"status\") \n           references
+      \"enum\".\"statuses\"\n           (\"value\") on update restrict on delete restrict;\n
+      \     "
+  type: run_sql

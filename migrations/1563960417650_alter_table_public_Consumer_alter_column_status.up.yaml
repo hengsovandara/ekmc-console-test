@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "public"."Consumer" ALTER COLUMN "status" TYPE int4;
+  type: run_sql
+- args:
+    sql: ALTER TABLE ONLY "public"."Consumer" ALTER COLUMN "status" SET DEFAULT 0;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."status" IS ''
+  type: run_sql

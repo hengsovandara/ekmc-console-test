@@ -1,0 +1,7 @@
+- args:
+    sql: ALTER TABLE "public"."Consumer" ADD CONSTRAINT "Consumer_referenceId_key"
+      UNIQUE ("referenceId")
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."Consumer"."referenceId" IS ''
+  type: run_sql
