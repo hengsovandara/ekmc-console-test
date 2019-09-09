@@ -1,0 +1,23 @@
+- args:
+    enable_manual: false
+    headers: []
+    name: SyncToPortalConsumer
+    replace: true
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    table:
+      name: Consumer
+      schema: public
+    update:
+      columns:
+      - amazonS3FaceImage
+      - firstName
+      - lastName
+      - referenceId
+      - liveness
+      - status
+      - identityDocumentType
+    webhook: https://node.clik-test.com/ekmc/ekyc-sync
+  type: create_event_trigger
