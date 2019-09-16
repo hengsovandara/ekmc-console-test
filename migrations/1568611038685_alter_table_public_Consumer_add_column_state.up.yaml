@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."Consumer" ADD COLUMN "state" text NULL;
+  type: run_sql
